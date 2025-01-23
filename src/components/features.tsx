@@ -1,4 +1,5 @@
 import {Navigation, Bell, Paintbrush, ArrowRight} from "lucide-react";
+import Link from "next/link";
 
 export const Features = () => {
     const features = [
@@ -29,15 +30,15 @@ export const Features = () => {
                             key={index}
                             className="feature-card group p-6 bg-white border border-gray-200 rounded-lg transition-transform transform hover:-translate-y-1 hover:shadow-lg duration-300"
                         >
-                            <a href="/features">
+                            <Link href="/features">
                                 <div className="mb-4 text-primary">{feature.icon}</div>
                                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                                 <p className="text-gray-600">{feature.description}</p>
-                            </a>
+                            </Link>
                         </div>
                     ))}
                 </div>
-                <a href="/features" className="ml-1 underline flex">View all <ArrowRight /></a>
+                <Link href="/features" className="ml-1 underline flex">View all <ArrowRight /></Link>
             </div>
         </section>
     );
