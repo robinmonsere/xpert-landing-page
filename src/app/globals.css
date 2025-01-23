@@ -3,14 +3,18 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light dark;
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #2463eb;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary: #2463eb;
+    --border: #1e293b;
   }
 }
 
@@ -18,4 +22,17 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Apply Inter font to all elements */
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.timeline-item {
+  @apply relative pl-8 pb-8 border-l border-primary last:border-l-0;
+}
+
+.timeline-dot {
+  @apply absolute -left-[5px] w-2.5 h-2.5 rounded-full bg-primary;
 }
